@@ -2,6 +2,7 @@ package org.drugis.common.threading.status;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -110,7 +111,7 @@ public class ActivityTaskProgressModel extends AbstractProgressModel {
 				phaseStrings.add(p.toString() + ": " + formatProgress(d_progress.get(p)));
 			}
 		}
-		return phaseStrings;
+		return Collections.unmodifiableList(phaseStrings);
 	}
 
 	@Override
